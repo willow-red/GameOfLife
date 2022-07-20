@@ -19,7 +19,7 @@ function buttonClick(){
   }
 }
 function canvasClick(event){
-  var cel = new Cell(event.layerX, event.layerY, false);
+  var cel = new Cell(event.layerX, event.layerY, true);
   if(event.buttons == 1){
     cel.draw();
   }
@@ -29,7 +29,3 @@ function canvasClick(event){
 //events
 canvy.addEventListener("mousemove", canvasClick);
 button.addEventListener("click", buttonClick);
-
-//cell
-var cel = new Cell(0,0,false);
-cel.draw();
