@@ -1,0 +1,33 @@
+body{
+  background-color: aliceblue;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+#game{
+  border:2px solid black;
+}
+
+#gameWrapper{
+  position: relative;
+  background-color: none;
+  margin: 0 auto;
+  width: 1250px;
+  height: 800px;
+}
+
+#stats{
+  position: absolute;
+  background-color:none;
+  top: 0px;
+  right: 0px;
+  border:2px solid black;
+  width: 400px;
+  height: 600px;
+}
