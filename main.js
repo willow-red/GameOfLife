@@ -22,13 +22,13 @@ function clickCells(event){
 function toggleGo(){
   going = !going
   if(going){
-    document.getElementById("pauseImg").style.display = 'none'
-    document.getElementById("goImg").style.display = 'inline'
+    document.getElementById("pauseImg").style.display = 'inline'
+    document.getElementById("goImg").style.display = 'none'
     loop = setInterval(generation,WAIT_TIME);
   } else {
     clearInterval(loop)
-    document.getElementById("pauseImg").style.display = 'inline'
-    document.getElementById("goImg").style.display = 'none'
+    document.getElementById("pauseImg").style.display = 'none'
+    document.getElementById("goImg").style.display = 'inline'
   }
 }
 //grid maker

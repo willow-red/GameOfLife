@@ -21,7 +21,6 @@ h2{
 
 #gameWrapper{
   position: relative;
-  background-color: none;
   margin: 0 auto;
   width: 1250px;
   height: 800px;
@@ -31,30 +30,50 @@ h2{
   position: absolute;
   background-color:none;
   top: 0px;
-  right: 0px;
+  right: 50px;
   border:2px solid black;
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 350px;
+}
+
+#topbar{
+  height:30px;
+  width: inherit;
+  background-color:black;
+}
+
+#frameAdvanceButton{
+  width:75px;
+  height:75px;
+  display:inline-block;
+  float:right;
 }
 
 #pauseGoButton{
-  width:100px;
-  height:100px;
-  margin: 0 auto;
+  width:75px;
+  height:75px;
+  display:inline-block;
+  float:left;
 }
+
 
 #pauseGoButton:hover{
   background-color:rgba(0,0,0,0.05);
 }
 
-#pauseImg{
+#goImg{
   display:none;
 }
 
 
 #toolbar{
-  height:100px;
-  width: inherit;
-  position: absolute;
-  bottom: 10px;
+  height:75px;
+  width: 150px;
+  bottom: -25px;
+  position: relative;
+  margin:0 auto;
+}
+
+.subStats{
+  margin-left:10px;
 }

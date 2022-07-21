@@ -11,14 +11,22 @@
     <div id="gameWrapper">
       <canvas id="game" width="800" height="800"></canvas>
       <div id="stats">
-        <h2>Stats</h2>
+        <div id="topbar"></div>
+        <h1>Stats</h1>
+        <h3 class="subStats">Generation: <span style="font-weight: normal;" id="generationNum">0</span> </h3>
+        <h3 class="subStats">Time step: <span style="font-weight: normal;" id="timeStep">300ms</span> </h3>
+        <div class="sliderContainer">
+          <input type="range" min="1" max="1000" value="50" class="subStats" id="speedSlider">
+        </div>
         <div id="toolbar">
           <div id="pauseGoButton">
             <img id="goImg" src="http://cdn.onlinewebfonts.com/svg/img_396080.png">
             <img id="pauseImg" src="https://cdn-icons-png.flaticon.com/512/16/16427.png">
           </div>
+          <div id="frameAdvanceButton">
+            <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="">
+          </div>
         </div>
-        <p id="input">Hello World</p>
 
       </div>
     </div>
