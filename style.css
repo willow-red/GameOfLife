@@ -1,3 +1,8 @@
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 body{
   background-color: aliceblue;
 }
@@ -30,4 +35,26 @@ h2{
   border:2px solid black;
   width: 400px;
   height: 600px;
+}
+
+#pauseGoButton{
+  width:100px;
+  height:100px;
+  margin: 0 auto;
+}
+
+#pauseGoButton:hover{
+  background-color:rgba(0,0,0,0.05);
+}
+
+#pauseImg{
+  display:none;
+}
+
+
+#toolbar{
+  height:100px;
+  width: inherit;
+  position: absolute;
+  bottom: 10px;
 }

@@ -1,5 +1,8 @@
 
 var canvy = document.getElementById('game');
+var goButton = document.getElementById("pauseGoButton")
+var WAIT_TIME = 300
+var going = true
 //click cells to change status
 function clickCells(event){
   for(var j = 0; j < rows; j++){
@@ -13,6 +16,19 @@ function clickCells(event){
           cell.draw();
         }
     }
+  }
+}
+
+function toggleGo(){
+  going = !going
+  if(going){
+    document.getElementById("pauseImg").style.display = 'none'
+    document.getElementById("goImg").style.display = 'inline'
+    loop = setInterval(generation,WAIT_TIME);
+  } else {
+    clearInterval(loop)
+    document.getElementById("pauseImg").style.display = 'inline'
+    document.getElementById("goImg").style.display = 'none'
   }
 }
 //grid maker
@@ -136,4 +152,5 @@ function generation(){
 //i love you beck
 //events
 canvy.addEventListener("click", clickCells);
-setInterval(generation,2000);
+goButton.addEventListener("click", toggleGo);
+var loop = setInterval(generation,WAIT_TIME);
