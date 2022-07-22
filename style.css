@@ -5,6 +5,7 @@ img {
 
 body{
   background-color: aliceblue;
+  font-family:sans-serif;
 }
 
 h1{
@@ -28,12 +29,13 @@ h2{
 
 #stats{
   position: absolute;
-  background-color:none;
+  background-image: linear-gradient(to bottom, rgba(130, 134, 140,0), rgba(130, 134, 140,0.3));
   top: 0px;
   right: 50px;
   border:2px solid black;
   width: 300px;
   height: 350px;
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.1) ;
 }
 
 #topbar{
@@ -43,33 +45,37 @@ h2{
 }
 
 #frameAdvanceButton{
-  width:75px;
-  height:75px;
-  display:inline-block;
+  width:60px;
+  height:60px;
+  border-radius: 20px;
   float:right;
 }
 
+#frameAdvanceButton:hover{
+  background-color:rgba(0,0,0,0.1);
+}
+
 #pauseGoButton{
-  width:75px;
-  height:75px;
-  display:inline-block;
+  width:60px;
+  height:60px;
+  border-radius: 20px;
   float:left;
 }
 
 
 #pauseGoButton:hover{
-  background-color:rgba(0,0,0,0.05);
+  background-color:rgba(0,0,0,0.1);
 }
 
-#goImg{
+#pauseImg{
   display:none;
 }
 
 
 #toolbar{
   height:75px;
-  width: 150px;
-  bottom: -25px;
+  width: 160px;
+  bottom: -30px;
   position: relative;
   margin:0 auto;
 }
