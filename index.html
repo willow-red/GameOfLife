@@ -11,21 +11,24 @@
     <div id="gameWrapper">
       <canvas id="game" width="800" height="800"></canvas>
       <div id="stats">
-        <div id="topbar"></div>
         <h1>Stats</h1>
-        <h3 class="subStats">Generation: <span style="font-weight: normal;" id="generationNum">0</span> </h3>
-        <h3 class="subStats">Time step: <span style="font-weight: normal;" id="timeStep"></span> </h3>
+        <h3 class="subStats">Generation:<span style="font-weight: normal;" id="generationNum">0</span></h3>
+
+        <h3 class="subStats">Time step: <span style="font-weight: normal;" id="timeStep">300ms</span></h3>
         <div class="sliderContainer">
           <input type="range" min="100" max="1000" value="100" step="100" class="subStats" id="speedSlider">
         </div>
         <hr>
         <div id="toolbar">
           <button class="button" id="pauseGoButton">
-            <img id="goImg" src="http://cdn.onlinewebfonts.com/svg/img_396080.png">
-            <img id="pauseImg" src="https://cdn-icons-png.flaticon.com/512/16/16427.png">
+            <img id="goImg" src="https://static.thenounproject.com/png/866031-200.png">
+            <img id="pauseImg" src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/media-pause.png">
           </button>
           <button class="button" id="frameAdvanceButton">
-            <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/right-arrow-1438234-1216195.png" alt="">
+          </button>
+          <button class="button" id="restartButton">
+            <img src="https://static.thenounproject.com/png/2576976-200.png" alt="">
           </button>
         </div>
 
