@@ -1,8 +1,46 @@
 
 var canvy = document.getElementById('game');
-var goButton = document.getElementById("pauseGoButton")
-var WAIT_TIME = 300
-var going = true
+var goButton = document.getElementById("pauseGoButton");
+var generations = document.getElementById("generationNum");
+var stepButton = document.getElementById("frameAdvanceButton");
+var slider = document.getElementById("speedSlider");
+var miliseconds = document.getElementById("timeStep");
+//default speed
+var speed = 500;
+var going = false;
+var gen = 1;
+var loop;
+//make slider a default upon reload
+slider.oninput = function defaultSlider() {
+  speed = this.value;
+  miliseconds.textContent = speed + "ms";
+}
+//pause and go button
+function toggleGo(){
+  going = !going;
+  if(going){
+    document.getElementById("pauseImg").style.display = 'inline';
+    document.getElementById("goImg").style.display = 'none';
+    loop = setInterval(generation, speed);
+    //slider thing
+    slider.oninput = function() {
+      speed = this.value;
+      miliseconds.textContent = speed + "ms";
+      clearInterval(loop);
+      loop = setInterval(generation, speed);
+    }
+  }
+  else {
+    clearInterval(loop);
+    document.getElementById("pauseImg").style.display = 'none';
+    document.getElementById("goImg").style.display = 'inline';
+    //slider thing
+    slider.oninput = function() {
+      speed = this.value;
+      miliseconds.textContent = speed + "ms";
+    }
+  }
+}
 //click cells to change status
 function clickCells(event){
   for(var j = 0; j < rows; j++){
@@ -16,19 +54,6 @@ function clickCells(event){
           cell.draw();
         }
     }
-  }
-}
-
-function toggleGo(){
-  going = !going
-  if(going){
-    document.getElementById("pauseImg").style.display = 'inline'
-    document.getElementById("goImg").style.display = 'none'
-    loop = setInterval(generation,WAIT_TIME);
-  } else {
-    clearInterval(loop)
-    document.getElementById("pauseImg").style.display = 'none'
-    document.getElementById("goImg").style.display = 'inline'
   }
 }
 //grid maker
@@ -136,7 +161,6 @@ function changeState(){
   }
 }
 //once neighbors are checked, update the game board with new values
-var gen = 0;
 function generation(){
   checkNeighbors();
   changeState();
@@ -147,10 +171,16 @@ function generation(){
       cell.draw();
     }
   }
+  generations.textContent = gen;
   gen++;
 }
-//i love you beck
+//generation stepper
+function step(){
+  if(!going){
+    generation();
+  }
+}
 //events
 canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
-var loop = setInterval(generation,WAIT_TIME);
+stepButton.addEventListener("click", step);
