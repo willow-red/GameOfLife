@@ -34,7 +34,7 @@ h2{
   right: 50px;
   border:2px solid black;
   width: 300px;
-  height: 350px;
+  height: 450px;
   box-shadow: 10px 10px 5px rgba(0,0,0,0.1) ;
   border-top: 30px solid black;
   border-radius: 30px;
@@ -73,9 +73,13 @@ h2{
 
 #colorChange{
   position: relative;
-  bottom: -10px;
-  width: 100%;
-  float left;
+  width: 50%;
+  margin-bottom:20px;
+}
+
+#colorChange_Background{
+  position: relative;
+  width: 50%;
 }
 
 .button{
@@ -101,13 +105,56 @@ h2{
 }
 
 #toolbar{
-  height:100px;
+  height:200px;
   width: 200px;
   bottom: -30px;
   position: relative;
   margin:0 auto;
 }
 
+#readMoreSettings{
+  bottom: 0px;
+  height: 100px;
+  position: absolute;
+  width: inherit;
+  text-align: right;
+}
+
 .subStats{
   margin-left:10px;
+}
+
+
+.readMoreCheckbox{
+  display:none;
+}
+
+.readMoreCheckbox:checked ~ #readMoreSettings .showtarget {
+  pointer-events: auto;
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+
+.readMoreCheckbox ~ .readMoreLabel:before{
+  content:"Show more";
+}
+
+.readMoreCheckbox:checked ~ .readMoreLabel:before {
+  content: 'Show less';
+}
+
+.showtarget{
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+.readMoreLabel{
+  display:inline-block;
+  width:100%;
+  text-align: center;
+  bottom:-10px;
+  position: relative;
 }
