@@ -23,8 +23,6 @@ h2{
 #gameWrapper{
   position: relative;
   margin: 0 auto;
-  width: 1250px;
-  height: 800px;
 }
 
 #stats{
