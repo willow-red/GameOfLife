@@ -6,11 +6,20 @@ var stepButton = document.getElementById("frameAdvanceButton");
 var slider = document.getElementById("speedSlider");
 var miliseconds = document.getElementById("timeStep");
 var restartButton = document.getElementById("restartButton");
+var color = document.getElementById("colorChange");
 //default speed
 var speed = 500;
 var going = false;
 var gen = 1;
 var loop;
+var liveCellColor = "#e60b0b";
+var deadCellColor="#2b2b2b";
+
+//color changing
+color.oninput = function colorChanger() {
+  liveCellColor = this.value;
+}
+
 //make slider a default upon reload
 slider.oninput = function defaultSlider() {
   speed = this.value;
@@ -52,7 +61,7 @@ function clickCells(event){
         && event.layerY > cell.y
         && event.layerY < cell.bottom){
           cell.changeAlive();
-          cell.draw();
+          cell.draw(liveCellColor, deadCellColor);
         }
     }
   }
@@ -72,7 +81,7 @@ function makeGrid(){
     for(var i = 0; i < columns; i++){
       var cell = new Cell(x, y, false);
       row.push(cell);
-      cell.draw();
+      cell.draw(liveCellColor, deadCellColor);
       x += Cell.SIZE;
     }
     grid.push(row);
@@ -169,7 +178,7 @@ function generation(){
   for(var j = 0; j < rows; j++){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
-      cell.draw();
+      cell.draw(liveCellColor, deadCellColor);
     }
   }
   generations.textContent = gen;
@@ -187,7 +196,7 @@ function reset(){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
       cell.isAlive = false;
-      cell.draw();
+      cell.draw(liveCellColor, deadCellColor);
     }
   }
   gen = 0;

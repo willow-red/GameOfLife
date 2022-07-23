@@ -13,13 +13,13 @@ class Cell{
     this.bottom = y+Cell.SIZE;
     this.neighbors = 0;
   }
-
-  draw(){
+  //custom colors can be input
+  draw(aliveCellColor, deadCellColor){
     if(this.isAlive == true){
-      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "#e60b0b");
+      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, aliveCellColor);
     }
     else{
-      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "#212121");
+      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, deadCellColor);
     }
   }
 
