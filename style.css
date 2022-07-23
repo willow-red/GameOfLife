@@ -71,6 +71,13 @@ h2{
   display:none;
 }
 
+#favcolor{
+  position: relative;
+  bottom: -10px;
+  width: 100%;
+  float left;
+}
+
 .button{
   border: none;
   box-shadow: 0px 6px rgba(0,0,0,0.4);
@@ -94,7 +101,7 @@ h2{
 }
 
 #toolbar{
-  height:75px;
+  height:100px;
   width: 200px;
   bottom: -30px;
   position: relative;
