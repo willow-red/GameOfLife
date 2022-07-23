@@ -1,5 +1,6 @@
 //helper
 var board = document.getElementById('game');
+var wrapper = document.getElementById("gameWrapper")
 var drawer = board.getContext("2d");
 
 board.width = window.innerWidth;

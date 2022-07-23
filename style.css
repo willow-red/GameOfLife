@@ -3,9 +3,10 @@ img {
     max-height: 100%;
 }
 
-body{
+body, html{
   background-color: aliceblue;
   font-family:sans-serif;
+  margin: 0;
 }
 
 h1{
@@ -16,13 +17,21 @@ h2{
   text-align: center;
 }
 
+#title{
+  background-color: rgba(165,201,255,0.5);
+  position:absolute;
+  width:100%;
+  margin: 0 auto;
+  z-index:1;
+}
+
 #game{
   border:2px solid black;
 }
 
 #gameWrapper{
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
+  min-height:100vh;
 }
 
 #stats{
