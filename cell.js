@@ -16,10 +16,10 @@ class Cell{
 
   draw(){
     if(this.isAlive == true){
-      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "red");
+      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "#e60b0b");
     }
     else{
-      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "grey");
+      drawRect(this.x,this.y,Cell.SIZE,Cell.SIZE, "#212121");
     }
   }
 

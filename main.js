@@ -5,6 +5,7 @@ var generations = document.getElementById("generationNum");
 var stepButton = document.getElementById("frameAdvanceButton");
 var slider = document.getElementById("speedSlider");
 var miliseconds = document.getElementById("timeStep");
+var restartButton = document.getElementById("restartButton");
 //default speed
 var speed = 500;
 var going = false;
@@ -180,7 +181,20 @@ function step(){
     generation();
   }
 }
+//reset
+function reset(){
+  for(var j = 0; j < rows; j++){
+    for(var i = 0; i < columns; i++){
+      var cell = grid[j][i];
+      cell.isAlive = false;
+      cell.draw();
+    }
+  }
+  gen = 0;
+  generations.textContent = gen;
+}
 //events
 canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
 stepButton.addEventListener("click", step);
+restartButton.addEventListener("click", reset);
