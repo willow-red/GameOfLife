@@ -197,6 +197,7 @@ function step(){
 }
 //reset
 function reset(){
+  drawer.clearRect(0, 0, board.width, board.height);
   for(var j = 0; j < rows; j++){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
