@@ -8,6 +8,7 @@ var miliseconds = document.getElementById("timeStep");
 var restartButton = document.getElementById("restartButton");
 var color = document.getElementById("colorChange");
 var bgColor = document.getElementById("colorChange_Background");
+var resetColors = document.getElementById("resetDefault");
 //default speed
 var speed = 500;
 var going = false;
@@ -16,6 +17,11 @@ var loop;
 var liveCellColor = "#e60b0b";
 var deadCellColor="#2b2b2b";
 
+//colors to default
+function defaultColors(){
+  liveCellColor = "#e60b0b";
+  deadCellColor="#2b2b2b";
+}
 //cell color changing
 color.oninput = function colorChanger() {
   liveCellColor = this.value;
@@ -222,4 +228,5 @@ canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
 stepButton.addEventListener("click", step);
 restartButton.addEventListener("click", reset);
+resetColors.addEventListener("click", defaultColors);
 window.addEventListener("resize", resized);
