@@ -1,7 +1,7 @@
 
 body, html{
   font-family:sans-serif;
-  margin: 10px;
+  margin: 0px;
 }
 
 img {
@@ -18,11 +18,14 @@ h2{
 }
 
 #title{
-  background-color: rgba(165,201,255,0.5);
+  top: 0px;
+  background-color: rgba(183, 187, 196,0.3);
+  color: #101010;
   position: relative;
   width:100%;
   margin: 0 auto;
   z-index:1;
+  letter-spacing:3px;
 }
 
 #game{
@@ -70,6 +73,11 @@ h2{
   height:60px;
   border-radius: 20px;
   float:left;
+}
+
+#resetDefault{
+  background-color:rgba(0,0,0,0);
+  box-shadow: 0px;
 }
 
 #restartButton{
@@ -128,7 +136,7 @@ h2{
 #readMoreSettings{
   display:none;
   bottom: 0px;
-  height: 100px;
+  height: 250px;
   position: relative;
   width: inherit;
   text-align: right;
