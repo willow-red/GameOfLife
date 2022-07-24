@@ -202,8 +202,10 @@ function reset(){
   gen = 0;
   generations.textContent = gen;
 }
+
 //events
 canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
 stepButton.addEventListener("click", step);
 restartButton.addEventListener("click", reset);
+window.addEventListener("resize", resized);
