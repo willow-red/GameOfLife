@@ -76,8 +76,9 @@ h2{
 }
 
 #resetDefault{
-  background-color:rgba(0,0,0,0);
+  background-color:rgba(255,255,255,0.5);
   box-shadow: 0px;
+  margin-top:20px;
 }
 
 #restartButton{
@@ -136,7 +137,7 @@ h2{
 #readMoreSettings{
   display:none;
   bottom: 0px;
-  height: 250px;
+  height: 165px;
   position: relative;
   width: inherit;
   text-align: right;
@@ -165,11 +166,11 @@ h2{
 
 
 .readMoreCheckbox ~ .readMoreLabel:before{
-  content:"Show more";
+  content:"+ Advanced Settings";
 }
 
 .readMoreCheckbox:checked ~ .readMoreLabel:before {
-  content: 'Show less';
+  content: '- Advanced Settings';
 }
 
 .showtarget{
