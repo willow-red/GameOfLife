@@ -9,6 +9,7 @@ board.height = wrapper.offsetHeight;
 function resized(){
   board.width = wrapper.offsetWidth;
   board.height = wrapper.offsetHeight;
+  redrawGrid();
 
 }
 

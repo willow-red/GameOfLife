@@ -7,6 +7,7 @@ var slider = document.getElementById("speedSlider");
 var miliseconds = document.getElementById("timeStep");
 var restartButton = document.getElementById("restartButton");
 var color = document.getElementById("colorChange");
+var bgColor = document.getElementById("colorChange_Background");
 //default speed
 var speed = 500;
 var going = false;
@@ -15,9 +16,13 @@ var loop;
 var liveCellColor = "#e60b0b";
 var deadCellColor="#2b2b2b";
 
-//color changing
+//cell color changing
 color.oninput = function colorChanger() {
   liveCellColor = this.value;
+}
+//dead cell color changing
+bgColor.oninput = function colorChangerBackground() {
+  deadCellColor = this.value;
 }
 
 //make slider a default upon reload
@@ -202,7 +207,15 @@ function reset(){
   gen = 0;
   generations.textContent = gen;
 }
-
+function redrawGrid(){
+  drawer.clearRect(0, 0, board.width, board.height);
+  for(var j = 0; j < rows; j++){
+    for(var i = 0; i < columns; i++){
+      var cell = grid[j][i];
+      cell.draw(liveCellColor, deadCellColor);
+    }
+  }
+}
 //events
 canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
