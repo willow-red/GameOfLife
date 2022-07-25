@@ -3,14 +3,17 @@ var canvy = document.getElementById('game');
 var goButton = document.getElementById("pauseGoButton");
 var generations = document.getElementById("generationNum");
 var stepButton = document.getElementById("frameAdvanceButton");
-var slider = document.getElementById("speedSlider");
+var speedSlider = document.getElementById("speedSlider");
+var zoomSlider = document.getElementById("zoomSlider")
 var miliseconds = document.getElementById("timeStep");
+var zoomLevel = document.getElementById("zoomLevel")
 var restartButton = document.getElementById("restartButton");
 var color = document.getElementById("colorChange");
 var bgColor = document.getElementById("colorChange_Background");
 var resetColors = document.getElementById("resetDefault");
 //default speed
 var speed = 500;
+var zoom = 1;
 var going = false;
 var gen = 1;
 var loop;
@@ -32,9 +35,14 @@ bgColor.oninput = function colorChangerBackground() {
 }
 
 //make slider a default upon reload
-slider.oninput = function defaultSlider() {
+speedSlider.oninput = function defaultSlider() {
   speed = this.value;
   miliseconds.textContent = speed + "ms";
+}
+
+zoomSlider.oninput = function(){
+  zoom = this.value
+  zoomLevel.textContent = zoom
 }
 //pause and go button
 function toggleGo(){
@@ -44,7 +52,7 @@ function toggleGo(){
     document.getElementById("goImg").style.display = 'none';
     loop = setInterval(generation, speed);
     //slider thing
-    slider.oninput = function() {
+    speedSlider.oninput = function() {
       speed = this.value;
       miliseconds.textContent = speed + "ms";
       clearInterval(loop);
@@ -56,7 +64,7 @@ function toggleGo(){
     document.getElementById("pauseImg").style.display = 'none';
     document.getElementById("goImg").style.display = 'inline';
     //slider thing
-    slider.oninput = function() {
+    speedSlider.oninput = function() {
       speed = this.value;
       miliseconds.textContent = speed + "ms";
     }
