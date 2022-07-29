@@ -15,6 +15,11 @@ h1{
 
 h2{
   text-align: center;
+  font-size: 24px;
+}
+h3{
+  font-size: 15px;
+  margin-bottom: 2px;
 }
 
 #title{
@@ -48,48 +53,46 @@ h2{
 #stats{
   position: absolute;
   background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(127, 127, 127,1));
-  top: 50px;
+  top: 70px;
   right: 50px;
   border:2px solid black;
-  width: 300px;
+  width: 150px;
   box-shadow: 10px 10px 5px rgba(0,0,0,0.1) ;
-  border-top: 30px solid black;
-  border-radius: 30px;
-}
-
-#topbar{
-  height:10px;
-  width: inherit;
-  background-color:black;
+  border-top: 20px solid black;
+  border-radius: 20px;
+  padding: 8px;
 }
 
 #frameAdvanceButton{
-  width:60px;
-  height:60px;
   border-radius: 20px;
-  margin-left:10px;
+  float:left;
+  width:40px;
+  height:40px;
+  margin: 5px;
 }
 
 #pauseGoButton{
-  width:60px;
-  height:60px;
   border-radius: 20px;
   float:left;
+  width:40px;
+  height:40px;
+  margin: 5px;
 }
 
 #resetDefault{
   background-color:rgba(255,255,255,0.5);
   box-shadow: 0px;
-  margin-top:20px;
+  margin-top:10px;
   border-radius: 20px;
   padding: 10px;
 }
 
 #restartButton{
-  width:60px;
-  height:60px;
   border-radius: 20px;
-  float:right;
+  float:left;
+  width:40px;
+  height:40px;
+  margin: 5px;
 }
 
 #pauseImg{
@@ -97,14 +100,14 @@ h2{
 }
 
 #colorChange{
-  position: relative;
-  width: 50%;
+  display: inline-block;
+  width: 40%;
   margin-bottom:20px;
 }
 
 #colorChange_Background{
-  position: relative;
-  width: 50%;
+  display: inline-block;
+  width: 40%;
 }
 
 .button{
@@ -122,20 +125,19 @@ h2{
   box-shadow: 0px 2px rgba(0,0,0,0.4);
 }
 
-.tooltip{
-  margin-left: auto;
+.slider{
+  width: 140px;
 }
 
-.tooltip .tooltiptext{
-  display: none;
+p{
+  font-size: 14px;
+  display: inline-block;
 }
 
 #toolbar{
-  width: 200px;
-  bottom: -30px;
   position: relative;
-  margin:0 auto;
-  min-height: 145px;
+  min-height: 50px;
+  background-color: none;
 }
 
 #readMoreSettings{
@@ -145,13 +147,7 @@ h2{
   position: relative;
   width: inherit;
   text-align: right;
-  margin-bottom: 10px;
 }
-
-.subStats{
-  margin-left:10px;
-}
-
 
 .readMoreCheckbox{
   display:none;
@@ -160,7 +156,6 @@ h2{
 .readMoreCheckbox:checked ~ #readMoreSettings .showtarget {
   pointer-events: auto;
   opacity: 1;
-  font-size: inherit;
   max-height: 999em;
 }
 
@@ -181,7 +176,6 @@ h2{
   pointer-events: none;
   opacity: 0;
 }
-
 
 .readMoreLabel{
   display:inline-block;

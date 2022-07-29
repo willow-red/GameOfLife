@@ -10,42 +10,40 @@
 
     <div id="gameWrapper">
       <canvas id="game"></canvas>
+      <!-- stats box -->
       <div id="stats">
-        <h1>Stats</h1>
+        <h2>Stats</h2>
         <h3 class="subStats">Generation: <span style="font-weight: normal;" id="generationNum">0</span></h3>
-
         <h3 class="subStats">Speed: <span style="font-weight: normal;" id="timeStep">300ms</span></h3>
-        <div class="sliderContainer">
-          <input type="range" min="10" max="1000" value="300" step="10" class="subStats" id="speedSlider">
-        </div>
+          <input type="range" min="10" max="500" value="300" step="10" class="slider" id="speedSlider">
         <h3 class="subStats">Zoom: <span style="font-weight: normal;" id="zoomLevel">1</span></h3>
-        <div class="sliderContainer">
-          <input type="range" min="1" max="3" value="1" step="0.1" class="subStats" id="zoomSlider">
-        </div>
+          <input type="range" min="1" max="3" value="1" step="0.1" class="slider" id="zoomSlider">
         <hr>
         <div id="toolbar">
-          <button class="button" id="pauseGoButton">
-            <img id="goImg" src="./assets/play.png">
-            <img id="pauseImg" src="./assets/pause.png">
-          </button>
-          <button class="button" id="frameAdvanceButton">
-            <img src="./assets/next.png" alt="">
-          </button>
-          <button class="button" id="restartButton">
-            <img src="./assets/restart.png" alt="">
-          </button>
-          <input type="checkbox" class="readMoreCheckbox" id="advancedSettings"> </input>
-          <label for="advancedSettings" class="readMoreLabel button"> </label>
+          <div id="buttonTools">
+            <button class="button" id="pauseGoButton">
+              <img id="goImg" src="./assets/play.png" alt="start game">
+              <img id="pauseImg" src="./assets/pause.png" alt="pause game">
+            </button>
+            <button class="button" id="frameAdvanceButton">
+              <img src="./assets/next.png" alt="next generation (step)">
+            </button>
+            <button class="button" id="restartButton">
+              <img src="./assets/restart.png" alt="reset game">
+            </button>
+          </div>
+          <input type="checkbox" class="readMoreCheckbox" id="advancedSettings"></input>
+          <label for="advancedSettings" class="readMoreLabel button"></label>
           <div id="readMoreSettings">
-            <label class="showtarget"> Cell: </label>
+            <p class="showtarget">Cell:</p>
             <input type="color" class="button showtarget" id="colorChange" name="cellColor" value="#ff0000"/>
-            <label class="showtarget"> Background: </label>
+            <p class="showtarget">Background:</p>
             <input type="color" class="button showtarget" id="colorChange_Background" name="favcolor" value="#ff0000"/>
             <button class="button" id="resetDefault">Reset Colors</button>
           </div>
         </div>
-
       </div>
+
     </div>
 
   </body>
