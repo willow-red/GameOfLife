@@ -43,6 +43,8 @@ speedSlider.oninput = function defaultSlider() {
 zoomSlider.oninput = function(){
   zoom = this.value
   zoomLevel.textContent = zoom
+  drawer.setTransform(this.value, 0, 0, this.value, 0, 0);
+  redrawGrid()
 }
 //pause and go button
 function toggleGo(){
