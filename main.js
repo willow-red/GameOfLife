@@ -78,10 +78,10 @@ function clickCells(event){
   for(var j = 0; j < rows; j++){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
-      if(event.layerX > cell.x
-        && event.layerX < cell.right
-        && event.layerY > cell.y
-        && event.layerY < cell.bottom){
+      if(event.layerX > cell.x * zoom
+        && event.layerX < cell.right * zoom
+        && event.layerY > cell.y * zoom
+        && event.layerY < cell.bottom * zoom){
           cell.changeAlive();
           cell.draw(liveCellColor, deadCellColor);
         }
