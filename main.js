@@ -41,10 +41,11 @@ speedSlider.oninput = function defaultSlider() {
 }
 
 zoomSlider.oninput = function(){
-  zoom = this.value
-  zoomLevel.textContent = zoom
+  zoom = this.value;
+  zoomLevel.textContent = zoom;
+  drawer.clearRect(0, 0, board.width, board.height);
   drawer.setTransform(this.value, 0, 0, this.value, 0, 0);
-  redrawGrid()
+  redrawGrid();
 }
 //pause and go button
 function toggleGo(){

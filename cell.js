@@ -1,7 +1,7 @@
 //cells on the board
 class Cell{
 
-  static SIZE = 20;
+  static SIZE = 10;
 
   constructor(x,y,isAlive){
     this.x = x; //also left side of square
