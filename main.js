@@ -11,7 +11,9 @@ var restartButton = document.getElementById("restartButton");
 var color = document.getElementById("colorChange");
 var bgColor = document.getElementById("colorChange_Background");
 var resetColors = document.getElementById("resetDefault");
+
 //default speed
+var down = false;
 var speed = 500;
 var zoom = 1;
 var going = false;
@@ -43,8 +45,9 @@ speedSlider.oninput = function defaultSlider() {
 zoomSlider.oninput = function(){
   zoom = this.value;
   zoomLevel.textContent = zoom;
-  drawer.clearRect(0, 0, board.width, board.height);
-  drawer.setTransform(this.value, 0, 0, this.value, 0, 0);
+  console.log(drawer.getTransform())
+  drawer.setTransform(this.value, 0, 0, this.value, drawer.getTransform().e, drawer.getTransform().f);
+  drawer.save()
   redrawGrid();
 }
 //pause and go button
@@ -75,13 +78,16 @@ function toggleGo(){
 }
 //click cells to change status
 function clickCells(event){
+  var currentTransform = drawer.getTransform();
+  var xTrans = currentTransform.e
+  var yTrans = currentTransform.f
   for(var j = 0; j < rows; j++){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
-      if(event.layerX > cell.x * zoom
-        && event.layerX < cell.right * zoom
-        && event.layerY > cell.y * zoom
-        && event.layerY < cell.bottom * zoom){
+      if(event.layerX > (cell.x) * zoom + xTrans
+        && event.layerX < (cell.right) * zoom + xTrans
+        && event.layerY > (cell.y) * zoom + yTrans
+        && event.layerY < (cell.bottom) * zoom + yTrans){
           cell.changeAlive();
           cell.draw(liveCellColor, deadCellColor);
         }
@@ -226,7 +232,9 @@ function reset(){
   generations.textContent = gen;
 }
 function redrawGrid(){
+  drawer.setTransform(1, 0, 0, 1, 0, 0);
   drawer.clearRect(0, 0, board.width, board.height);
+  drawer.restore()
   for(var j = 0; j < rows; j++){
     for(var i = 0; i < columns; i++){
       var cell = grid[j][i];
@@ -235,6 +243,21 @@ function redrawGrid(){
   }
 }
 //events
+document.addEventListener('mousedown', () => down = true);
+document.addEventListener('mouseup', () => {
+  down = false
+  canvy.style.cursor = "default"; 
+});
+//for dragging canvas
+document.addEventListener('mousemove', function(e){
+  if(e.target != canvy) return
+  if(!down) return
+  canvy.style.cursor = "grabbing";
+  drawer.translate(e.movementX,e.movementY)
+  drawer.save()
+  redrawGrid();
+});
+
 canvy.addEventListener("click", clickCells);
 goButton.addEventListener("click", toggleGo);
 stepButton.addEventListener("click", step);
